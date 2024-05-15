@@ -6,13 +6,13 @@ using namespace std;
 string PalabraMayus(const string& palabra);
 void cifrar();
 void descifrar();
-int inicio();
+string inicio();
 
 int main(){
-    int b= inicio();
-    if(b==1){
+    string b= inicio();
+    if(b=="a"){
         cifrar();
-    }else if(b==2){
+    }else if(b=="b"){
         descifrar();
     }
     }
@@ -84,14 +84,14 @@ void descifrar() {
     }
     cout<<"la palabra descifrada es: "<<pade;
 }
-int inicio() {
+string inicio() {
 
-    int a;
-    while(a>3 || a<1){
-        cout << "esa no es una opcion, escoja otra" <<endl;
-        cout << "Que desea hacer?" <<endl;
-        cout << " 1)Cifrar \n 2)Descifrar \n 3)Salir" <<endl;
-        cin>>a;}
-    return a;
+    string op="";
+	do{
+		cout << "Que desea hacer?" <<endl;
+		cout << " a)Cifrar \n b)Descifrar \n c)Salir" <<endl;
+		cin>>op;
+	}while(op!="a" && op!="b" && op!="c");
+    return op;
 }
       
